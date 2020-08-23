@@ -1,0 +1,3 @@
+^{:watch-dirs ["src/cljs"]
+  :auto-testing false}
+{:main app.core}
