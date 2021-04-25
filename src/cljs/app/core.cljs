@@ -68,11 +68,10 @@
 ;; UI code
 (defn toggle-area
   [area-id]
-  (let [element (dom/getElement area-id)
-        class (.getAttribute element "class")]
-    (if (= class "invisible")
-      (.setAttribute element "class" "")
-      (.setAttribute element "class" "invisible"))))
+  (-> area-id
+    dom/getElement
+    .-classList
+    (.toggle "invisible")))
 
 (defn clear-feedback-form
   [section-id]
